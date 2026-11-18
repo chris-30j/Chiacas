@@ -12,15 +12,86 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <!-- OFFICIAL GOOGLE PAY WEB API SDK -->
-  <script src="https://pay.google.com/gp/p/js/pay.js" async onload="onGooglePayLoaded()"></script>
+  <script src="https://pay.google.com/gp/p/js/pay.js" async onload="if(typeof onGooglePayLoaded==='function')onGooglePayLoaded()"></script>
+  <!-- Direct Inline Kiosk Start Handler (Works immediately even before external scripts load or if cached) -->
+  <script>
+    function startKioskOrder(orderType) {
+      try {
+        var overlay = document.getElementById('kiosk-welcome-overlay');
+        if (overlay) {
+          overlay.hidden = true;
+          overlay.setAttribute('hidden', '');
+          overlay.classList.add('hidden');
+          overlay.style.setProperty('display', 'none', 'important');
+        }
+        var vid = document.getElementById('kiosk-welcome-video');
+        if (vid) { try { vid.pause(); } catch(e) {} }
+
+        document.body.classList.remove('kiosk-welcome-open');
+        document.body.className = (document.body.className || '').replace(/\bkiosk-welcome-open\b/g, '').trim();
+
+        var header = document.querySelector('.app-header');
+        var main = document.querySelector('.main-content');
+        var cartBar = document.querySelector('.kiosk-cart-bar');
+        if (header) header.style.setProperty('display', 'flex', 'important');
+        if (main) main.style.setProperty('display', 'block', 'important');
+        if (cartBar) cartBar.style.setProperty('display', 'flex', 'important');
+
+        if (typeof window.state !== 'undefined' && window.state) {
+          window.state.orderType = orderType === 'Take-Out' ? 'Take-Out' : 'Dine-In';
+        }
+        var dineInControl = document.getElementById('type-dinein');
+        var takeoutControl = document.getElementById('type-takeout');
+        if (dineInControl) dineInControl.classList.toggle('active', orderType !== 'Take-Out');
+        if (takeoutControl) takeoutControl.classList.toggle('active', orderType === 'Take-Out');
+
+        try {
+          localStorage.setItem('chiacas_last_order_type', orderType === 'Take-Out' ? 'Take-Out' : 'Dine-In');
+        } catch (e) {}
+
+        if (typeof renderMenu === 'function') {
+          try { renderMenu(); } catch (e) {}
+        }
+      } catch (err) {
+        console.error('startKioskOrder error:', err);
+      }
+    }
+    window.startKioskOrder = startKioskOrder;
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var btn = document.querySelector('.kiosk-welcome-choice');
+      if (btn) {
+        btn.onclick = function() { startKioskOrder('Dine-In'); };
+        btn.addEventListener('click', function() { startKioskOrder('Dine-In'); });
+        btn.addEventListener('pointerup', function() { startKioskOrder('Dine-In'); });
+        btn.addEventListener('touchend', function(e) {
+          e.preventDefault();
+          startKioskOrder('Dine-In');
+        });
+      }
+    });
+  </script>
 </head>
-<body class="theme-dark">
+<body class="theme-orange-white kiosk-welcome-open">
+  <!-- ADDITIVE CUSTOMER WELCOME SCREEN: Home Page Video Clip with Interactive Touch-to-Order -->
+  <section class="kiosk-welcome-overlay" id="kiosk-welcome-overlay" aria-label="Welcome to ChiaCas Express self-order kiosk" onclick="startKioskOrder('Dine-In')">
+    <div class="kiosk-welcome-panel kiosk-welcome-video-card" id="kiosk-welcome-panel" title="Touch screen to start ordering">
+      <video id="kiosk-welcome-video" class="kiosk-welcome-video" autoplay loop muted playsinline poster="assets/big_mac.jpg">
+        <source src="assets/home page video.mp4" type="video/mp4">
+        <source src="assets/home%20page%20video.mp4" type="video/mp4">
+        <!-- Image Fallback if browser doesn't play video -->
+        <img src="assets/big_mac.jpg" alt="Freshly prepared burger with fries" style="width:100%; border-radius:36px;">
+      </video>
+      <!-- Interactive Order Now Button Hotspot (matches animated button in video) -->
+      <button class="kiosk-welcome-choice kiosk-welcome-btn-hotspot" id="kiosk-welcome-start-btn" type="button" aria-label="Order Now" onclick="event.stopPropagation(); startKioskOrder('Dine-In')"></button>
+    </div>
+  </section>
   <!-- Top Navigation App Bar -->
   <header class="app-header">
     <div class="brand-logo">
       <div class="mcd-arches">
         <svg viewBox="0 0 100 100" class="gold-arches-svg">
-          <path d="M15 85 C 15 30, 35 30, 35 70 C 35 30, 55 30, 55 85 C 55 30, 75 30, 75 70 C 75 30, 95 30, 95 85" fill="none" stroke="#FFBC0D" stroke-width="14" stroke-linecap="round"/>
+          <path d="M15 85 C 15 30, 35 30, 35 70 C 35 30, 55 30, 55 85 C 55 30, 75 30, 75 70 C 75 30, 95 30, 95 85" fill="none" stroke="#FF7900" stroke-width="14" stroke-linecap="round"/>
         </svg>
       </div>
       <div class="brand-text">
@@ -94,17 +165,7 @@
     
     <!-- ==================== VIEW 1: CUSTOMER SELF-ORDERING KIOSK ==================== -->
     <section id="kiosk-view" class="view-panel active">
-      <!-- Kiosk Banner / Promo Header -->
-      <div class="kiosk-banner">
-        <div class="banner-content">
-          <span class="banner-badge"><i class="fa-solid fa-fire"></i> Limited Time Offer</span>
-          <h1 id="banner-title">Double Big Mac Combo Deal</h1>
-          <p id="banner-desc">Get extra patties, large crispy fries & cold drink with free McFlurry coupon!</p>
-        </div>
-        <button class="banner-cta" id="banner-cta-btn" onclick="quickAddPromo()">
-          Order Meal Deal — <strong>₹499</strong>
-        </button>
-      </div>
+
 
       <!-- Main Kiosk Grid Layout: Left Categories Sidebar + Center Menu Items Grid -->
       <div class="kiosk-layout">
@@ -119,7 +180,7 @@
             <h2 id="current-category-title">All Menu Items</h2>
             <div class="search-box">
               <i class="fa-solid fa-magnifying-glass"></i>
-              <input type="text" id="menu-search-input" placeholder="Search Big Mac, McFlurry, Nuggets..." oninput="handleSearch(this.value)">
+              <input type="text" id="menu-search-input" placeholder="Search Items..." oninput="handleSearch(this.value)">
             </div>
           </div>
 
@@ -169,11 +230,13 @@
           
           <div class="counter-cat-filter-pills">
             <button class="counter-cat-pill active" onclick="filterCounterTopCatalog('all', this)">All Items</button>
-            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('burgers', this)">Burgers</button>
-            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('chicken', this)">Chicken</button>
-            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('sides', this)">Sides</button>
-            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('drinks', this)">Drinks</button>
-            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('desserts', this)">Desserts</button>
+            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('SANDWICH & BURGER', this)">SANDWICH & BURGER</button>
+            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('SNACKS', this)">SNACKS</button>
+            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('MAGGI', this)">MAGGI</button>
+            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('EGG', this)">EGG</button>
+            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('BREAD & ROLL', this)">BREAD & ROLL</button>
+            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('MILK SHAKE & JUICE', this)">MILK SHAKE & JUICE</button>
+            <button class="counter-cat-pill" onclick="filterCounterTopCatalog('ICE CREAM', this)">ICE CREAM</button>
           </div>
 
           <!-- Live Total Summary Bar -->
@@ -229,7 +292,7 @@
               <div class="ebill-brand">
                 <div class="mini-arches">
                   <svg viewBox="0 0 100 100" style="width: 32px; height: 32px;">
-                    <path d="M15 85 C 15 30, 35 30, 35 70 C 35 30, 55 30, 55 85 C 55 30, 75 30, 75 70 C 75 30, 95 30, 95 85" fill="none" stroke="#FFBC0D" stroke-width="16" stroke-linecap="round"/>
+                    <path d="M15 85 C 15 30, 35 30, 35 70 C 35 30, 55 30, 55 85 C 55 30, 75 30, 75 70 C 75 30, 95 30, 95 85" fill="none" stroke="#FF7900" stroke-width="16" stroke-linecap="round"/>
                   </svg>
                 </div>
                 <div>
@@ -359,7 +422,7 @@
       <!-- Live Search Box for Adding Item to Active Bill -->
       <div class="search-box" style="width: 100%; max-width: 100%; margin-bottom: 16px; background: var(--bg-dark); border-color: var(--border-gold);">
         <i class="fa-solid fa-magnifying-glass" style="color: var(--mcd-gold);"></i>
-        <input type="text" id="counter-add-item-search-input" placeholder="Search item by name (e.g. Big Mac, Fries, McFlurry, Coffee)..." oninput="handleCounterAddItemSearch(this.value)">
+        <input type="text" id="counter-add-item-search-input" placeholder="Search item..." oninput="handleCounterAddItemSearch(this.value)">
       </div>
 
       <div class="counter-catalog-grid" id="counter-catalog-grid">
@@ -520,7 +583,7 @@
       <p id="success-sub-text">Your Order Token has been sent to the e-Bill Counter register.</p>
 
       <div class="ticket-receipt-preview">
-        <div class="ticket-number" id="success-token-num">#MCD-801</div>
+        <div class="ticket-number" id="success-token-num">#CC-801</div>
         <div class="ticket-payable-amt" id="success-payable-amt-display">Total Paid: ₹0.00</div>
         
         <!-- QR Code with payable amount overlay -->
@@ -747,12 +810,13 @@
             <div>
               <label>CATEGORY *</label>
               <select id="form-item-category-select" onchange="handleCategorySelectChange()" required>
-                <option value="burgers">Burgers</option>
-                <option value="chicken">Chicken & Fish</option>
-                <option value="sides">Fries & Sides</option>
-                <option value="drinks">Beverages</option>
-                <option value="desserts">Desserts</option>
-                <option value="breakfast">Breakfast</option>
+                <option value="SANDWICH & BURGER">SANDWICH & BURGER</option>
+                <option value="SNACKS">SNACKS</option>
+                <option value="MAGGI">MAGGI</option>
+                <option value="EGG">EGG</option>
+                <option value="BREAD & ROLL">BREAD & ROLL</option>
+                <option value="MILK SHAKE & JUICE">MILK SHAKE & JUICE</option>
+                <option value="ICE CREAM">ICE CREAM</option>
                 <option value="NEW_CUSTOM_CATEGORY" style="color:var(--mcd-gold); font-weight:bold;">+ Type & Create New Category...</option>
               </select>
               <div id="custom-category-input-wrap" class="hidden" style="margin-top:6px;">
@@ -983,7 +1047,7 @@
     </div>
   </div>
 
-  <!-- JS Logic -->
-  <script src="app.js"></script>
+  <!-- JS Logic with version query string to prevent browser caching -->
+  <script src="app.js?v=20261118_v10"></script>
 </body>
 </html>

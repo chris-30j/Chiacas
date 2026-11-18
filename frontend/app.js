@@ -5,168 +5,381 @@
 // --- MENU CATALOG STATE (INDIAN RUPEE ₹) ---
 const DEFAULT_MENU_CATALOG = [
   {
-    id: 'mcd-001',
-    name: 'Big Mac®',
-    category: 'burgers',
-    price: 259.00,
-    calories: '550 Cal',
-    image: 'assets/big_mac.jpg',
-    tag: 'POPULAR',
-    description: 'Two 100% pure patties with Big Mac sauce, crisp lettuce, cheddar cheese, pickles & onions on a sesame bun.'
+    "id": "cc-sb-01",
+    "name": "Sandwich Veg",
+    "category": "SANDWICH & BURGER",
+    "price": 75.0,
+    "image": "assets/veg sandwhich.jpg"
   },
   {
-    id: 'mcd-002',
-    name: 'Double Cheeseburger',
-    category: 'burgers',
-    price: 179.00,
-    calories: '440 Cal',
-    image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop&q=80',
-    tag: 'VALUE',
-    description: 'Two juicy patties seasoned with salt & pepper, topped with tangy pickles, minced onions & melted cheese.'
+    "id": "cc-sb-02",
+    "name": "Sandwich Cheese",
+    "category": "SANDWICH & BURGER",
+    "price": 90.0,
+    "image": "assets/sandwich cheese.png"
   },
   {
-    id: 'mcd-003',
-    name: 'Quarter Pounder® with Cheese',
-    category: 'burgers',
-    price: 289.00,
-    calories: '520 Cal',
-    image: 'https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=500&auto=format&fit=crop&q=80',
-    tag: 'CLASSIC',
-    description: 'Fresh grilled patty cooked to order, hot and juicy, layered with melted cheese & slivered onions.'
+    "id": "cc-sb-03",
+    "name": "Sandwich Chicken",
+    "category": "SANDWICH & BURGER",
+    "price": 100.0,
+    "image": "assets/chicken sandwich.jpg"
   },
   {
-    id: 'mcd-004',
-    name: 'Spicy McChicken®',
-    category: 'chicken',
-    price: 199.00,
-    calories: '470 Cal',
-    image: 'https://images.unsplash.com/photo-1625813506062-0aeb1d7a094b?w=500&auto=format&fit=crop&q=80',
-    tag: 'SPICY',
-    description: 'Crispy spicy chicken patty topped with shredded lettuce & creamy mayo served on a toasted bun.'
+    "id": "cc-sb-04",
+    "name": "Sandwich Egg",
+    "category": "SANDWICH & BURGER",
+    "price": 100.0,
+    "image": "assets/egg sandwich.webp"
   },
   {
-    id: 'mcd-005',
-    name: 'Chicken McNuggets® (10 Pc)',
-    category: 'chicken',
-    price: 239.00,
-    calories: '420 Cal',
-    image: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=500&auto=format&fit=crop&q=80',
-    tag: 'POPULAR',
-    description: 'Tender, juicy white meat chicken nuggets with crispy coating. Includes choice of 2 dip sauces.'
+    "id": "cc-sb-05",
+    "name": "Sandwich Peri Peri Egg",
+    "category": "SANDWICH & BURGER",
+    "price": 120.0,
+    "image": "assets/egg sandwich.webp"
   },
   {
-    id: 'mcd-006',
-    name: 'Filet-O-Fish®',
-    category: 'chicken',
-    price: 219.00,
-    calories: '390 Cal',
-    image: 'https://images.unsplash.com/photo-1521305916504-4a1121188589?w=500&auto=format&fit=crop&q=80',
-    tag: 'FISH',
-    description: 'Wild-caught fish patty with tartar sauce & melty cheese on a steamed bun.'
+    "id": "cc-sb-06",
+    "name": "Sandwich Chicken & Cheese",
+    "category": "SANDWICH & BURGER",
+    "price": 120.0,
+    "image": "assets/chicken sandwich.jpg"
   },
   {
-    id: 'mcd-007',
-    name: 'World Famous Fries® (L)',
-    category: 'sides',
-    price: 129.00,
-    calories: '480 Cal',
-    image: 'assets/french_fries.jpg',
-    tag: 'MUST HAVE',
-    description: 'Golden on the outside, soft and fluffy on the inside. Made with premium grade potatoes.'
+    "id": "cc-sb-07",
+    "name": "Classic Chicken Burger",
+    "category": "SANDWICH & BURGER",
+    "price": 130.0,
+    "image": "assets/big_mac.jpg"
   },
   {
-    id: 'mcd-008',
-    name: 'Mozzarella Sticks (4 Pc)',
-    category: 'sides',
-    price: 149.00,
-    calories: '280 Cal',
-    image: 'https://images.unsplash.com/photo-1531749668029-2db88e4276c7?w=500&auto=format&fit=crop&q=80',
-    tag: 'NEW',
-    description: 'Crispy golden breaded mozzarella sticks served with warm marinara dipping sauce.'
+    "id": "cc-sb-08",
+    "name": "Chicken 65 Burger",
+    "category": "SANDWICH & BURGER",
+    "price": 150.0,
+    "image": "assets/chicken 65 burger.png"
   },
   {
-    id: 'mcd-009',
-    name: 'Coca-Cola® Zero Sugar',
-    category: 'drinks',
-    price: 89.00,
-    calories: '0 Cal',
-    image: 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=500&auto=format&fit=crop&q=80',
-    tag: 'BEVERAGE',
-    description: 'Refreshing fountain Coca-Cola Zero Sugar served with chilled ice.'
+    "id": "cc-snk-01",
+    "name": "Pani Puri",
+    "category": "SNACKS",
+    "price": 30.0,
+    "image": "assets/paani puri.png"
   },
   {
-    id: 'mcd-010',
-    name: 'Iced Caramel McCafé®',
-    category: 'drinks',
-    price: 169.00,
-    calories: '260 Cal',
-    image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?w=500&auto=format&fit=crop&q=80',
-    tag: 'MCCAfé',
-    description: 'Espresso coffee blended with rich caramel syrup, cold milk & topped with whipped cream.'
+    "id": "cc-snk-02",
+    "name": "Butter Bun",
+    "category": "SNACKS",
+    "price": 35.0,
+    "image": "assets/butter bun.webp"
   },
   {
-    id: 'mcd-011',
-    name: 'McFlurry® Oreo®',
-    category: 'desserts',
-    price: 149.00,
-    calories: '510 Cal',
-    image: 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&auto=format&fit=crop&q=80',
-    tag: 'DESSERT',
-    description: 'Soft-serve creamy vanilla ice cream swirled with crushed Oreo cookie pieces.'
+    "id": "cc-snk-03",
+    "name": "Chocolate Bun",
+    "category": "SNACKS",
+    "price": 50.0,
+    "image": "assets/chocolate bun.jpeg"
   },
   {
-    id: 'mcd-012',
-    name: 'Baked Hot Apple Pie',
-    category: 'desserts',
-    price: 99.00,
-    calories: '230 Cal',
-    image: 'https://images.unsplash.com/photo-1535920527002-b35e96722eb9?w=500&auto=format&fit=crop&q=80',
-    tag: 'CLASSIC',
-    description: 'Crispy pastry crust filled with warm, cinnamon-spiced apples.'
+    "id": "cc-snk-04",
+    "name": "Bun Butter Jam",
+    "category": "SNACKS",
+    "price": 50.0,
+    "image": "assets/bun butter jamm.png"
   },
   {
-    id: 'mcd-013',
-    name: 'Egg McMuffin®',
-    category: 'breakfast',
-    price: 179.00,
-    calories: '310 Cal',
-    image: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=500&auto=format&fit=crop&q=80',
-    tag: 'BREAKFAST',
-    description: 'Freshly cracked egg with bacon and melty cheese on toasted English muffin.'
+    "id": "cc-snk-05",
+    "name": "Smileys",
+    "category": "SNACKS",
+    "price": 70.0,
+    "image": "assets/smileys.jpg"
   },
   {
-    id: 'mcd-014',
-    name: 'Hash Browns',
-    category: 'breakfast',
-    price: 79.00,
-    calories: '140 Cal',
-    image: 'https://images.unsplash.com/photo-1541592106381-b31e96773655?w=500&auto=format&fit=crop&q=80',
-    tag: 'CRISPY',
-    description: 'Crispy, golden shredded potato hash brown patty fried to perfection.'
+    "id": "cc-snk-06",
+    "name": "French Fries",
+    "category": "SNACKS",
+    "price": 70.0,
+    "image": "assets/french_fries.jpg"
+  },
+  {
+    "id": "cc-snk-07",
+    "name": "Loaded Cheese Fries",
+    "category": "SNACKS",
+    "price": 120.0,
+    "image": "assets/loaded friess.png"
+  },
+  {
+    "id": "cc-snk-08",
+    "name": "Loaded Chicken Fries",
+    "category": "SNACKS",
+    "price": 150.0,
+    "image": "assets/loaded chicken fries.jpg"
+  },
+  {
+    "id": "cc-mag-01",
+    "name": "Veg Maggi",
+    "category": "MAGGI",
+    "price": 60.0,
+    "image": "assets/veg maggie.jpg"
+  },
+  {
+    "id": "cc-mag-02",
+    "name": "Spicy Tomato Maggi",
+    "category": "MAGGI",
+    "price": 60.0,
+    "image": "assets/spicy tomato maggie.avif"
+  },
+  {
+    "id": "cc-mag-03",
+    "name": "Spicy Garlic Maggi",
+    "category": "MAGGI",
+    "price": 60.0,
+    "image": "assets/spicy masala maggie.png"
+  },
+  {
+    "id": "cc-mag-04",
+    "name": "Egg Masala Maggi",
+    "category": "MAGGI",
+    "price": 70.0,
+    "image": "assets/spicy masala maggie.png"
+  },
+  {
+    "id": "cc-mag-05",
+    "name": "Chilli Cheese Maggi",
+    "category": "MAGGI",
+    "price": 80.0,
+    "image": "assets/chilli cheese maggie.png"
+  },
+  {
+    "id": "cc-mag-06",
+    "name": "Mayo Cheese Maggi",
+    "category": "MAGGI",
+    "price": 150.0,
+    "image": "assets/mayo cheese maggie.png"
+  },
+  {
+    "id": "cc-egg-01",
+    "name": "Omelette",
+    "category": "EGG",
+    "price": 20.0,
+    "image": "assets/Omelette.webp"
+  },
+  {
+    "id": "cc-egg-02",
+    "name": "Plain Egg",
+    "category": "EGG",
+    "price": 20.0,
+    "image": "assets/plain egg.jpg"
+  },
+  {
+    "id": "cc-egg-03",
+    "name": "Full Boil",
+    "category": "EGG",
+    "price": 20.0,
+    "image": "assets/full boil.jpg"
+  },
+  {
+    "id": "cc-egg-04",
+    "name": "Half Boil",
+    "category": "EGG",
+    "price": 30.0,
+    "image": "assets/half boil.jpg"
+  },
+  {
+    "id": "cc-egg-05",
+    "name": "Poriyal",
+    "category": "EGG",
+    "price": 100.0,
+    "image": "assets/Poriyal.avif"
+  },
+  {
+    "id": "cc-egg-06",
+    "name": "Butter Garlic Egg",
+    "category": "EGG",
+    "price": 100.0,
+    "image": "assets/Butter Garlic Egg.jpg"
+  },
+  {
+    "id": "cc-br-01",
+    "name": "Butter Toast",
+    "category": "BREAD & ROLL",
+    "price": 50.0,
+    "image": "assets/butter toast.jpg"
+  },
+  {
+    "id": "cc-br-02",
+    "name": "Garlic Toast",
+    "category": "BREAD & ROLL",
+    "price": 50.0,
+    "image": "assets/garlic toast.jpg"
+  },
+  {
+    "id": "cc-br-03",
+    "name": "Bread Chilli",
+    "category": "BREAD & ROLL",
+    "price": 60.0,
+    "image": "assets/bread chilli roll.jpg"
+  },
+  {
+    "id": "cc-br-04",
+    "name": "Bread Omelette",
+    "category": "BREAD & ROLL",
+    "price": 70.0,
+    "image": "assets/bread omelete.jpg"
+  },
+  {
+    "id": "cc-br-05",
+    "name": "Chinese Egg Roll",
+    "category": "BREAD & ROLL",
+    "price": 80.0,
+    "image": "assets/chinese egg roll.jpg"
+  },
+  {
+    "id": "cc-br-06",
+    "name": "Wheat Egg Roll",
+    "category": "BREAD & ROLL",
+    "price": 90.0,
+    "image": "assets/wheat egg roll.png"
+  },
+  {
+    "id": "cc-br-07",
+    "name": "Wheat Chicken Roll",
+    "category": "BREAD & ROLL",
+    "price": 100.0,
+    "image": "assets/wheat chicken roll.png"
+  },
+  {
+    "id": "cc-msj-01",
+    "name": "Lemon Juice",
+    "category": "MILK SHAKE & JUICE",
+    "price": 25.0,
+    "image": "assets/juice lemon.png"
+  },
+  {
+    "id": "cc-msj-02",
+    "name": "Rose Milk",
+    "category": "MILK SHAKE & JUICE",
+    "price": 40.0,
+    "image": "assets/rose milk.jpg"
+  },
+  {
+    "id": "cc-msj-03",
+    "name": "Watermelon Juice",
+    "category": "MILK SHAKE & JUICE",
+    "price": 60.0,
+    "image": "assets/watermelon juice.avif"
+  },
+  {
+    "id": "cc-msj-04",
+    "name": "Vanilla Milkshake",
+    "category": "MILK SHAKE & JUICE",
+    "price": 130.0,
+    "image": "assets/vanilla milkshake.avif"
+  },
+  {
+    "id": "cc-msj-05",
+    "name": "Strawberry Milkshake",
+    "category": "MILK SHAKE & JUICE",
+    "price": 130.0,
+    "image": "assets/strawberry milkshake.jpg"
+  },
+  {
+    "id": "cc-msj-06",
+    "name": "Chocolate Milkshake",
+    "category": "MILK SHAKE & JUICE",
+    "price": 130.0,
+    "image": "assets/chocolate milkshake.webp"
+  },
+  {
+    "id": "cc-msj-07",
+    "name": "Butterscotch Milkshake",
+    "category": "MILK SHAKE & JUICE",
+    "price": 130.0,
+    "image": "assets/butterscotch milkshake.webp"
+  },
+  {
+    "id": "cc-msj-08",
+    "name": "Oreo/Kitkat Milkshake",
+    "category": "MILK SHAKE & JUICE",
+    "price": 130.0,
+    "image": "assets/oreo or kitkat milkshake.jpg"
+  },
+  {
+    "id": "cc-ice-01",
+    "name": "One Scoop Ice Cream",
+    "category": "ICE CREAM",
+    "price": 10.0,
+    "image": "assets/one scope icecream.png"
+
+  },
+  {
+    "id": "cc-ice-02",
+    "name": "Vanilla",
+    "category": "ICE CREAM",
+    "price": 40.0,
+    "image": "assets/vanilla ice cream.png"
+  },
+  {
+    "id": "cc-ice-03",
+    "name": "Strawberry",
+    "category": "ICE CREAM",
+    "price": 40.0,
+    "image": "assets/strawberry icecream.png"
+  },
+  {
+    "id": "cc-ice-04",
+    "name": "Pista",
+    "category": "ICE CREAM",
+    "price": 50.0,
+    "image": "assets/pista ice cream.png"
+  },
+  {
+    "id": "cc-ice-05",
+    "name": "Chocolate",
+    "category": "ICE CREAM",
+    "price": 50.0,
+    "image": "assets/chocolate ice cream.png"
+  },
+  {
+    "id": "cc-ice-06",
+    "name": "Butterscotch",
+    "category": "ICE CREAM",
+    "price": 50.0,
+    "image": "assets/butterscotch ice cream.png"
   }
 ];
 
 let MENU_CATALOG = [];
 
+const CATALOG_STORAGE_KEY = 'chiacas_menu_catalog_v7';
+
 function loadCustomCatalog() {
-  const storedCatalog = localStorage.getItem('mcd_custom_catalog');
+  const storedCatalog = localStorage.getItem(CATALOG_STORAGE_KEY);
   if (storedCatalog) {
     try {
       MENU_CATALOG = JSON.parse(storedCatalog);
       if (!Array.isArray(MENU_CATALOG) || MENU_CATALOG.length === 0) {
         MENU_CATALOG = [...DEFAULT_MENU_CATALOG];
+        saveCustomCatalog();
       }
     } catch(e) {
       MENU_CATALOG = [...DEFAULT_MENU_CATALOG];
+      saveCustomCatalog();
     }
   } else {
+    // Fresh catalog initialization
+    try { localStorage.removeItem('mcd_custom_catalog'); } catch(e){}
     MENU_CATALOG = [...DEFAULT_MENU_CATALOG];
     saveCustomCatalog();
   }
 }
 
 function saveCustomCatalog() {
-  localStorage.setItem('mcd_custom_catalog', JSON.stringify(MENU_CATALOG));
+  try {
+    localStorage.setItem(CATALOG_STORAGE_KEY, JSON.stringify(MENU_CATALOG));
+    localStorage.setItem('mcd_custom_catalog', JSON.stringify(MENU_CATALOG));
+  } catch(e){}
 }
 
 // --- APP GLOBAL STATE ---
@@ -646,11 +859,13 @@ function switchView(viewName, playAudio = true) {
   localStorage.setItem('mcd_active_view', viewName);
 
   if (viewName === 'kiosk') {
+    document.body.classList.remove('counter-mode-active');
     document.getElementById('kiosk-view').classList.add('active');
     if (profileWidget) profileWidget.style.display = 'none';
     if (counterPosBtn) counterPosBtn.style.display = 'inline-flex';
     window.location.hash = 'kiosk';
   } else if (viewName === 'counter') {
+    document.body.classList.add('counter-mode-active');
     document.getElementById('counter-view').classList.add('active');
     if (profileWidget) profileWidget.style.display = 'flex';
     if (counterPosBtn) counterPosBtn.style.display = 'none';
@@ -684,27 +899,32 @@ function setOrderType(type) {
 // --- MENU RENDERING & FILTERING ---
 function filterCategory(cat) {
   playSound('click');
-  const targetCat = (cat || 'all').toLowerCase().trim();
+  const targetCat = (cat || 'all').trim();
   state.currentCategory = targetCat;
 
+  const norm = s => (s || '').toLowerCase().replace(/&/g, '/').replace(/[^a-z0-9]/g, ' ').replace(/\s+/g, ' ').trim();
+  const targetNorm = norm(targetCat);
+
   document.querySelectorAll('#kiosk-category-nav .cat-btn, .category-sidebar .cat-btn').forEach(btn => {
-    const btnCat = (btn.dataset.category || '').toLowerCase().trim();
-    btn.classList.toggle('active', btnCat === targetCat);
+    const btnCat = (btn.dataset.category || '').trim();
+    const isAct = (targetNorm === 'all' && norm(btnCat) === 'all') || (targetNorm !== 'all' && norm(btnCat) === targetNorm);
+    btn.classList.toggle('active', isAct);
   });
   
   const titleMap = {
-    all: 'All Menu Items',
-    burgers: 'Signature Burgers',
-    chicken: 'Chicken & Fish Favorites',
-    sides: 'World Famous Fries & Sides',
-    drinks: 'Refreshing Beverages',
-    desserts: 'Delicious Desserts',
-    breakfast: 'McBreakfast Menu'
+    'all': 'All Menu Items',
+    'sandwich & burger': 'Sandwiches & Burgers',
+    'snacks': 'Snacks & Fries',
+    'maggi': 'Maggi Specials',
+    'egg': 'Egg Specials',
+    'bread & roll': 'Bread & Rolls',
+    'milk shake & juice': 'Milkshakes & Fresh Juices',
+    'milk shake / juice': 'Milkshakes & Fresh Juices',
+    'ice cream': 'Ice Cream Scoops & Flavors'
   };
   const titleElem = document.getElementById('current-category-title');
   if (titleElem) {
-    const formattedTitle = targetCat.charAt(0).toUpperCase() + targetCat.slice(1);
-    titleElem.textContent = titleMap[targetCat] || (formattedTitle + ' Menu');
+    titleElem.textContent = titleMap[targetCat.toLowerCase()] || (targetNorm === 'all' ? 'All Menu Items' : `${targetCat} Menu`);
   }
   renderMenu();
 }
@@ -724,20 +944,29 @@ function renderMenu() {
     saveCustomCatalog();
   }
 
+  const targetCat = (state.currentCategory || 'all').trim();
   const searchQ = (state.searchQuery || '').toLowerCase().trim();
 
+  const norm = s => (s || '').toLowerCase().replace(/&/g, '/').replace(/[^a-z0-9]/g, ' ').replace(/\s+/g, ' ').trim();
+  const targetNorm = norm(targetCat);
+
   const filtered = MENU_CATALOG.filter(item => {
+    const itemNorm = norm(item.category);
+    const matchesCat = (targetNorm === 'all') || (itemNorm === targetNorm);
+
     const itemName = (item.name || '').toLowerCase();
     const itemDesc = (item.description || '').toLowerCase();
-    return !searchQ || itemName.includes(searchQ) || itemDesc.includes(searchQ);
+    const matchesSearch = !searchQ || itemName.includes(searchQ) || itemDesc.includes(searchQ) || itemNorm.includes(searchQ);
+
+    return matchesCat && matchesSearch;
   });
 
   if (filtered.length === 0) {
     container.innerHTML = `
       <div style="grid-column: 1/-1; text-align: center; padding: 60px; color: var(--text-muted);">
-        <i class="fa-solid fa-burger" style="font-size: 3rem; margin-bottom: 12px; color: var(--mcd-gold);"></i>
+        <i class="fa-solid fa-burger" style="font-size: 3rem; margin-bottom: 12px; color: var(--primary-orange);"></i>
         <h3>No matching menu items found</h3>
-        <p>Try searching for Big Mac, Fries, or Coffee</p>
+        <p>Try choosing another category or clear your search</p>
       </div>
     `;
     return;
@@ -749,13 +978,15 @@ function renderMenu() {
     card.onclick = () => openCustomizeModal(item.id);
     card.innerHTML = `
       <div class="food-img-wrapper">
-        <img src="${item.image}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500&auto=format&fit=crop&q=80'">
+        <img src="${item.image}" alt="${item.name}" onerror="this.src='assets/big_mac.jpg'">
       </div>
       <div class="food-info">
         <h3>${item.name}</h3>
+        ${(item.calories || item.tag) ? `
         <div class="food-meta">
-          <span><i class="fa-solid fa-fire"></i> ${item.calories || ''}</span>
-        </div>
+          ${item.calories ? `<span><i class="fa-solid fa-fire"></i> ${item.calories}</span>` : ''}
+          ${item.tag ? `<span class="card-tag" ${!item.calories ? 'style="margin-left:0;"' : 'style="margin-left:auto;"'}>${item.tag}</span>` : ''}
+        </div>` : ''}
       </div>
       <div class="food-footer">
         <span class="food-price">₹${item.price.toFixed(2)}</span>
@@ -810,10 +1041,24 @@ function openCustomizeModal(itemId) {
     quantity: 1
   };
 
-  document.getElementById('modal-food-img').src = item.image;
-  document.getElementById('modal-food-title').textContent = item.name;
-  document.getElementById('modal-food-desc').textContent = item.description || '';
-  document.getElementById('modal-food-cal').innerHTML = `<i class="fa-solid fa-fire"></i> ${item.calories || ''}`;
+  const imgEl = document.getElementById('custom-item-img') || document.getElementById('modal-food-img');
+  if (imgEl) imgEl.src = item.image;
+  const titleEl = document.getElementById('custom-item-name') || document.getElementById('modal-food-title');
+  if (titleEl) titleEl.textContent = item.name;
+  const descEl = document.getElementById('custom-item-desc') || document.getElementById('modal-food-desc');
+  if (descEl) descEl.textContent = item.description || '';
+  const priceEl = document.getElementById('custom-base-price');
+  if (priceEl) priceEl.textContent = `₹${item.price.toFixed(2)}`;
+  const calElem = document.getElementById('custom-item-cal') || document.getElementById('modal-food-cal');
+  if (calElem) {
+    if (item.calories) {
+      calElem.innerHTML = `<i class="fa-solid fa-fire"></i> ${item.calories}`;
+      calElem.style.display = 'inline-flex';
+    } else {
+      calElem.innerHTML = '';
+      calElem.style.display = 'none';
+    }
+  }
 
   document.querySelectorAll('.size-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelector('.size-btn[data-size="solo"]').classList.add('active');
@@ -896,8 +1141,9 @@ function getActivePromoOffer() {
 }
 
 function updatePromoBannerUI() {
-  const activeOffer = getActivePromoOffer();
   const bannerElem = document.querySelector('.kiosk-banner');
+  if (!bannerElem) return;
+  const activeOffer = getActivePromoOffer();
   const titleElem = document.getElementById('banner-title');
   const descElem = document.getElementById('banner-desc');
   const btnElem = document.getElementById('banner-cta-btn');
@@ -1074,7 +1320,7 @@ function selectPayMethod(method, elem) {
     cardBox.innerHTML = `
       <div class="gpay-qr-display">
         <i class="fa-brands fa-google-pay" style="font-size: 3rem; color: #4285F4;"></i>
-        <h4 style="color:#ffffff; font-weight:800;">Official Google Pay Web API (INR ₹)</h4>
+        <h4 style="color:var(--text-dark); font-weight:800;">Official Google Pay Web API (INR ₹)</h4>
         <p style="color:var(--text-secondary); font-size:0.85rem;">Pay <strong>₹${grandTotal.toFixed(2)}</strong> via GPay app or scan QR Code</p>
         <div class="qr-box-wrapper" style="margin: 8px 0;">
           <canvas id="modal-gpay-qr-canvas"></canvas>
@@ -1094,7 +1340,7 @@ function selectPayMethod(method, elem) {
     cardBox.innerHTML = `
       <div>
         <i class="fa-solid fa-money-bill-wave wifi-icon" style="color: var(--mcd-gold);"></i>
-        <p style="font-weight: 800; color: #ffffff; font-size:1.1rem;">Pay Cash at Counter</p>
+        <p style="font-weight: 800; color: var(--text-dark); font-size:1.1rem;">Pay Cash at Counter</p>
         <p style="color: var(--text-muted); font-size:0.85rem; margin-top:4px;">
           Touching "Confirm" will generate your <strong>Order Token #</strong>.<br>Present token & pay cash at counter register.
         </p>
@@ -1105,7 +1351,7 @@ function selectPayMethod(method, elem) {
     cardBox.innerHTML = `
       <div class="card-terminal-animation">
         <i class="fa-solid fa-wifi wifi-icon"></i>
-        <p style="font-weight:700; color:#ffffff;">Tap Credit/Debit Card on Terminal Reader</p>
+        <p style="font-weight:700; color:var(--text-dark);">Tap Credit/Debit Card on Terminal Reader</p>
         <div class="mock-card-slot">
           <i class="fa-solid fa-credit-card"></i>
           <span>Insert Card / Contactless Tap</span>
@@ -1181,8 +1427,8 @@ function processOrderPayment(overrideMethod) {
     document.getElementById('success-sub-text').textContent = 'Your order is confirmed! Please note your token number.';
   } else {
     statusPill.className = 'ticket-status-badge';
-    statusPill.style.background = 'var(--mcd-gold)';
-    statusPill.style.color = '#121212';
+    statusPill.style.background = 'var(--primary-orange)';
+    statusPill.style.color = '#ffffff';
     statusPill.innerHTML = `<i class="fa-solid fa-clock"></i> CASH TOKEN ISSUED - PENDING COUNTER PAYMENT`;
     document.getElementById('success-sub-text').textContent = 'Cash Token generated! Please present token to Cashier.';
   }
@@ -1197,6 +1443,20 @@ function processOrderPayment(overrideMethod) {
 function finishOrderAndReset() {
   playSound('click');
   document.getElementById('success-modal').classList.remove('open');
+  // Reset cart for next customer
+  state.cart = [];
+  updateCartDisplay();
+  // Return to welcome screen
+  const welcomeOverlay = document.getElementById('kiosk-welcome-overlay');
+  if (welcomeOverlay) {
+    welcomeOverlay.hidden = false;
+    welcomeOverlay.removeAttribute('hidden');
+    welcomeOverlay.classList.remove('hidden');
+    welcomeOverlay.style.removeProperty('display');
+    document.body.classList.add('kiosk-welcome-open');
+    const vid = document.getElementById('kiosk-welcome-video');
+    if (vid) { try { vid.currentTime = 0; vid.play(); } catch(e) {} }
+  }
   switchView('kiosk');
 }
 
@@ -1605,7 +1865,7 @@ function renderCounterCatalogGrid(searchQ = '') {
     card.innerHTML = `
       <div>
         <div class="counter-item-title">${item.name}</div>
-        <small style="color:var(--text-muted); font-size:0.75rem;">${item.calories || ''} • ${item.category.toUpperCase()}</small>
+        <small style="color:var(--text-muted); font-size:0.75rem;">${item.calories ? `${item.calories} • ` : ''}${item.category.toUpperCase()}</small>
       </div>
       <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
         <span class="counter-item-price">₹${item.price.toFixed(2)}</span>
@@ -2037,8 +2297,10 @@ function renderCounterTopCatalogRow(cat = 'all') {
 
   const activeOrd = state.orders.find(o => o.token === state.activeSelectedToken);
 
+  const norm = s => (s || '').toLowerCase().replace(/&/g, '/').replace(/[^a-z0-9]/g, ' ').replace(/\s+/g, ' ').trim();
+  const targetNorm = norm(cat);
   const filtered = MENU_CATALOG.filter(item => {
-    return cat === 'all' || item.category === cat;
+    return targetNorm === 'all' || norm(item.category) === targetNorm;
   });
 
   filtered.forEach(item => {
@@ -2149,46 +2411,56 @@ let currentOwnerMenuCategory = 'all';
 
 function renderCategoryFilterButtons() {
   const defaultCats = [
-    { slug: 'burgers', label: 'BURGERS', icon: 'fa-burger' },
-    { slug: 'chicken', label: 'CHICKEN', icon: 'fa-drumstick-bite' },
-    { slug: 'sides', label: 'FRIES & SIDES', icon: 'fa-box-tissue' },
-    { slug: 'drinks', label: 'BEVERAGES', icon: 'fa-mug-hot' },
-    { slug: 'desserts', label: 'DESSERTS', icon: 'fa-ice-cream' },
-    { slug: 'breakfast', label: 'BREAKFAST', icon: 'fa-egg' }
+    { slug: 'SANDWICH & BURGER', label: 'SANDWICH & BURGER', icon: 'fa-burger' },
+    { slug: 'SNACKS', label: 'SNACKS', icon: 'fa-cookie-bite' },
+    { slug: 'MAGGI', label: 'MAGGI', icon: 'fa-bowl-food' },
+    { slug: 'EGG', label: 'EGG', icon: 'fa-egg' },
+    { slug: 'BREAD & ROLL', label: 'BREAD & ROLL', icon: 'fa-bread-slice' },
+    { slug: 'MILK SHAKE & JUICE', label: 'MILK SHAKE & JUICE', icon: 'fa-wine-glass' },
+    { slug: 'ICE CREAM', label: 'ICE CREAM', icon: 'fa-ice-cream' }
   ];
 
+  const norm = s => (s || '').toLowerCase().replace(/&/g, '/').replace(/[^a-z0-9]/g, ' ').replace(/\s+/g, ' ').trim();
+
+  // Find any extra custom categories created by owner
   const customCats = [];
-  MENU_CATALOG.forEach(item => {
-    if (item.category && !defaultCats.some(c => c.slug === item.category.toLowerCase()) && !customCats.includes(item.category.toLowerCase())) {
-      customCats.push(item.category.toLowerCase());
+  (MENU_CATALOG || []).forEach(item => {
+    if (item.category) {
+      const itemNorm = norm(item.category);
+      const isDef = defaultCats.some(c => norm(c.slug) === itemNorm);
+      if (!isDef && !customCats.some(c => norm(c) === itemNorm)) {
+        customCats.push(item.category);
+      }
     }
   });
 
   // 1. Render Kiosk left sidebar category navigation
   const kioskCatNav = document.getElementById('kiosk-category-nav');
   if (kioskCatNav) {
+    const curNorm = norm(state.currentCategory);
     let navHtml = `
-      <button class="cat-btn ${state.currentCategory === 'all' ? 'active' : ''}" data-category="all" onclick="filterCategory('all')">
+      <button class="cat-btn ${curNorm === 'all' ? 'active' : ''}" data-category="all" onclick="filterCategory('all')">
         <i class="fa-solid fa-utensils"></i>
         <span>All Items</span>
       </button>
     `;
 
     defaultCats.forEach(c => {
+      const isAct = curNorm === norm(c.slug);
       navHtml += `
-        <button class="cat-btn ${state.currentCategory === c.slug ? 'active' : ''}" data-category="${c.slug}" onclick="filterCategory('${c.slug}')">
+        <button class="cat-btn ${isAct ? 'active' : ''}" data-category="${c.slug}" onclick="filterCategory('${c.slug}')">
           <i class="fa-solid ${c.icon}"></i>
           <span>${c.label}</span>
         </button>
       `;
     });
 
-    customCats.forEach(catSlug => {
-      const formattedLabel = catSlug.charAt(0).toUpperCase() + catSlug.slice(1);
+    customCats.forEach(catName => {
+      const isAct = curNorm === norm(catName);
       navHtml += `
-        <button class="cat-btn ${state.currentCategory === catSlug ? 'active' : ''}" data-category="${catSlug}" onclick="filterCategory('${catSlug}')">
+        <button class="cat-btn ${isAct ? 'active' : ''}" data-category="${catName}" onclick="filterCategory('${catName}')">
           <i class="fa-solid fa-tag"></i>
-          <span>${formattedLabel.toUpperCase()}</span>
+          <span>${catName.toUpperCase()}</span>
         </button>
       `;
     });
@@ -2199,25 +2471,27 @@ function renderCategoryFilterButtons() {
   // 2. Render Counter top bar category filter pills
   const counterCatRow = document.getElementById('counter-top-cat-pills');
   if (counterCatRow) {
+    const curCounterNorm = norm(currentCounterTopCategory);
     let pillsHtml = `
-      <button class="counter-cat-pill ${currentCounterTopCategory === 'all' ? 'active' : ''}" onclick="filterCounterTopCatalog('all', this)">
+      <button class="counter-cat-pill ${curCounterNorm === 'all' ? 'active' : ''}" onclick="filterCounterTopCatalog('all', this)">
         <i class="fa-solid fa-border-all"></i> All Items
       </button>
     `;
 
     defaultCats.forEach(c => {
+      const isAct = curCounterNorm === norm(c.slug);
       pillsHtml += `
-        <button class="counter-cat-pill ${currentCounterTopCategory === c.slug ? 'active' : ''}" onclick="filterCounterTopCatalog('${c.slug}', this)">
+        <button class="counter-cat-pill ${isAct ? 'active' : ''}" onclick="filterCounterTopCatalog('${c.slug}', this)">
           <i class="fa-solid ${c.icon}"></i> ${c.label}
         </button>
       `;
     });
 
-    customCats.forEach(catSlug => {
-      const formattedLabel = catSlug.charAt(0).toUpperCase() + catSlug.slice(1);
+    customCats.forEach(catName => {
+      const isAct = curCounterNorm === norm(catName);
       pillsHtml += `
-        <button class="counter-cat-pill ${currentCounterTopCategory === catSlug ? 'active' : ''}" onclick="filterCounterTopCatalog('${catSlug}', this)">
-          <i class="fa-solid fa-tag"></i> ${formattedLabel}
+        <button class="counter-cat-pill ${isAct ? 'active' : ''}" onclick="filterCounterTopCatalog('${catName}', this)">
+          <i class="fa-solid fa-tag"></i> ${catName}
         </button>
       `;
     });
@@ -2229,64 +2503,53 @@ function renderCategoryFilterButtons() {
   const selectElem = document.getElementById('form-item-category-select');
   if (selectElem) {
     let optHtml = `
-      <option value="burgers">Burgers</option>
-      <option value="chicken">Chicken & Fish</option>
-      <option value="sides">Fries & Sides</option>
-      <option value="drinks">Beverages</option>
-      <option value="desserts">Desserts</option>
-      <option value="breakfast">Breakfast</option>
+      <option value="SANDWICH & BURGER">SANDWICH & BURGER</option>
+      <option value="SNACKS">SNACKS</option>
+      <option value="MAGGI">MAGGI</option>
+      <option value="EGG">EGG</option>
+      <option value="BREAD & ROLL">BREAD & ROLL</option>
+      <option value="MILK SHAKE & JUICE">MILK SHAKE & JUICE</option>
+      <option value="ICE CREAM">ICE CREAM</option>
     `;
-
-    customCats.forEach(catSlug => {
-      const formattedLabel = catSlug.charAt(0).toUpperCase() + catSlug.slice(1);
-      optHtml += `<option value="${catSlug}">${formattedLabel}</option>`;
+    customCats.forEach(catName => {
+      optHtml += `<option value="${catName}">${catName}</option>`;
     });
-
     optHtml += `<option value="NEW_CUSTOM_CATEGORY" style="color:var(--mcd-gold); font-weight:bold;">+ Type & Create New Category...</option>`;
-
     selectElem.innerHTML = optHtml;
   }
 
-  // 4. Render Owner Menu Catalog Top Category Pills
-  const ownerMenuCatRow = document.getElementById('owner-menu-category-pills');
-  if (ownerMenuCatRow) {
+  // 4. Render Owner Menu Manager Category Pills
+  const ownerPillsContainer = document.getElementById('owner-menu-category-pills');
+  if (ownerPillsContainer) {
+    const curOwnerNorm = norm(currentOwnerMenuCategory);
     let ownerPillsHtml = `
-      <button class="counter-cat-pill ${currentOwnerMenuCategory === 'all' ? 'active' : ''}" onclick="filterOwnerMenuCatalogCategory('all', this)">
-        <i class="fa-solid fa-border-all"></i> All Items (${MENU_CATALOG.length})
+      <button class="counter-cat-pill ${curOwnerNorm === 'all' ? 'active' : ''}" onclick="filterOwnerMenuCatalogCategory('all', this)">
+        All (${(MENU_CATALOG || []).length})
       </button>
     `;
 
     defaultCats.forEach(c => {
-      const count = MENU_CATALOG.filter(i => i.category.toLowerCase() === c.slug).length;
+      const count = (MENU_CATALOG || []).filter(i => norm(i.category) === norm(c.slug)).length;
+      const isAct = curOwnerNorm === norm(c.slug);
       ownerPillsHtml += `
-        <button class="counter-cat-pill ${currentOwnerMenuCategory === c.slug ? 'active' : ''}" onclick="filterOwnerMenuCatalogCategory('${c.slug}', this)">
-          <i class="fa-solid ${c.icon}"></i> ${c.label} (${count})
+        <button class="counter-cat-pill ${isAct ? 'active' : ''}" onclick="filterOwnerMenuCatalogCategory('${c.slug}', this)">
+          ${c.label} (${count})
         </button>
       `;
     });
 
-    customCats.forEach(catSlug => {
-      const formattedLabel = catSlug.charAt(0).toUpperCase() + catSlug.slice(1);
-      const count = MENU_CATALOG.filter(i => i.category.toLowerCase() === catSlug).length;
+    customCats.forEach(catName => {
+      const count = (MENU_CATALOG || []).filter(i => norm(i.category) === norm(catName)).length;
+      const isAct = curOwnerNorm === norm(catName);
       ownerPillsHtml += `
-        <button class="counter-cat-pill ${currentOwnerMenuCategory === catSlug ? 'active' : ''}" onclick="filterOwnerMenuCatalogCategory('${catSlug}', this)">
-          <i class="fa-solid fa-tag"></i> ${formattedLabel} (${count})
+        <button class="counter-cat-pill ${isAct ? 'active' : ''}" onclick="filterOwnerMenuCatalogCategory('${catName}', this)">
+          ${catName} (${count})
         </button>
       `;
     });
 
-    ownerMenuCatRow.innerHTML = ownerPillsHtml;
+    ownerPillsContainer.innerHTML = ownerPillsHtml;
   }
-}
-
-function filterOwnerMenuCatalogCategory(catSlug, elem) {
-  playSound('click');
-  currentOwnerMenuCategory = catSlug;
-  if (elem) {
-    document.querySelectorAll('#owner-menu-category-pills .counter-cat-pill').forEach(btn => btn.classList.remove('active'));
-    elem.classList.add('active');
-  }
-  renderOwnerMenuTable();
 }
 
 function triggerBrowsePhoto(e) {
@@ -2427,8 +2690,10 @@ function renderOwnerMenuTable() {
   if (!tbody) return;
   tbody.innerHTML = '';
 
+  const norm = s => (s || '').toLowerCase().replace(/&/g, '/').replace(/[^a-z0-9]/g, ' ').replace(/\s+/g, ' ').trim();
+  const targetNorm = norm(currentOwnerMenuCategory);
   const filtered = MENU_CATALOG.filter(item => {
-    return currentOwnerMenuCategory === 'all' || item.category.toLowerCase() === currentOwnerMenuCategory;
+    return targetNorm === 'all' || norm(item.category) === targetNorm;
   });
 
   if (filtered.length === 0) {
@@ -2750,3 +3015,62 @@ function savePromoOfferForm(e) {
 
 
 
+
+
+// ==================== ADDITIVE WELCOME SCREEN FLOW ====================
+// Keeps the existing menu, cart, checkout, counter POS, and storage logic intact.
+function startKioskOrder(orderType) {
+  try {
+    const overlay = document.getElementById('kiosk-welcome-overlay');
+    if (overlay) {
+      overlay.hidden = true;
+      overlay.setAttribute('hidden', '');
+      overlay.classList.add('hidden');
+      overlay.style.setProperty('display', 'none', 'important');
+    }
+    const vid = document.getElementById('kiosk-welcome-video');
+    if (vid) { try { vid.pause(); } catch(e) {} }
+
+    document.body.classList.remove('kiosk-welcome-open');
+    document.body.className = (document.body.className || '').replace(/\bkiosk-welcome-open\b/g, '').trim();
+
+    const header = document.querySelector('.app-header');
+    const main = document.querySelector('.main-content');
+    const cartBar = document.querySelector('.kiosk-cart-bar');
+    if (header) header.style.removeProperty('display');
+    if (main) main.style.removeProperty('display');
+    if (cartBar) cartBar.style.removeProperty('display');
+
+    if (typeof state !== 'undefined' && state) {
+      state.orderType = orderType === 'Take-Out' ? 'Take-Out' : 'Dine-In';
+    }
+
+    // Keep the existing checkout order-type controls in sync when they are present.
+    const dineInControl = document.getElementById('type-dinein');
+    const takeoutControl = document.getElementById('type-takeout');
+    if (dineInControl) dineInControl.classList.toggle('active', orderType !== 'Take-Out');
+    if (takeoutControl) takeoutControl.classList.toggle('active', orderType === 'Take-Out');
+
+    try { localStorage.setItem('chiacas_last_order_type', orderType === 'Take-Out' ? 'Take-Out' : 'Dine-In'); } catch (error) { /* Storage may be disabled in private kiosk contexts. */ }
+
+    if (typeof renderMenu === 'function') {
+      try { renderMenu(); } catch (e) {}
+    }
+  } catch (err) {
+    console.error('startKioskOrder error:', err);
+  }
+}
+window.startKioskOrder = startKioskOrder;
+
+// The welcome screen is shown on each fresh page load so the next customer starts cleanly.
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.location.search.includes('order=now')) {
+    startKioskOrder('Dine-In');
+    return;
+  }
+  const welcomeOverlay = document.getElementById('kiosk-welcome-overlay');
+  if (welcomeOverlay) {
+    welcomeOverlay.hidden = false;
+    document.body.classList.add('kiosk-welcome-open');
+  }
+});
