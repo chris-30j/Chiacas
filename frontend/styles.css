@@ -3233,11 +3233,12 @@ body {
   box-sizing: border-box !important;
 }
 
+#kiosk-welcome-panel.kiosk-welcome-card,
 #kiosk-welcome-panel.kiosk-welcome-video-card {
   position: relative !important;
   box-sizing: border-box !important;
   width: 100% !important;
-  max-width: 760px !important;
+  max-width: 680px !important;
   max-height: 94vh !important;
   max-height: 94dvh !important;
   min-height: auto !important;
@@ -3245,12 +3246,21 @@ body {
   margin: auto !important;
   background: #FFFFFF !important;
   border-radius: clamp(24px, 4vw, 36px) !important;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12) !important;
   overflow: hidden !important;
   cursor: pointer !important;
   display: block !important;
   border: none !important;
   padding: 0 !important;
+}
+
+.kiosk-welcome-video-wrap {
+  position: relative !important;
+  width: 100% !important;
+  background: #FFFFFF !important;
+  overflow: hidden !important;
+  line-height: 0 !important;
+  display: block !important;
 }
 
 .kiosk-welcome-video {
@@ -3259,27 +3269,59 @@ body {
   max-height: 94dvh !important;
   height: auto !important;
   display: block !important;
-  border-radius: clamp(24px, 4vw, 36px) !important;
   object-fit: contain !important;
+  border-radius: clamp(24px, 4vw, 36px) !important;
 }
 
-#kiosk-welcome-start-btn.kiosk-welcome-btn-hotspot {
+/* Single Order Now button: Inactive during intro (0-9.4s), activates when animation reveals the button (9.5s) */
+#kiosk-welcome-start-btn.kiosk-welcome-choice {
   position: absolute !important;
-  left: 4.5% !important;
-  right: 4.5% !important;
-  bottom: 4% !important;
-  height: 12% !important;
+  left: 6.8% !important;
+  right: 6.8% !important;
+  bottom: 8.2% !important;
+  height: 16.2% !important;
   border-radius: 20px !important;
-  cursor: pointer !important;
-  z-index: 10 !important;
   background: transparent !important;
   border: none !important;
+  outline: none !important;
   box-shadow: none !important;
+  cursor: default !important;
+  pointer-events: none !important;
+  z-index: 10 !important;
   padding: 0 !important;
+  margin: 0 !important;
+  display: block !important;
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  transition: none !important;
 }
 
-#kiosk-welcome-start-btn.kiosk-welcome-btn-hotspot:focus-visible {
-  outline: 3px solid #FF7900 !important;
+#kiosk-welcome-start-btn.kiosk-welcome-choice.active {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Completely remove any white box, border, outline, highlight, or shadow */
+#kiosk-welcome-start-btn.kiosk-welcome-choice:hover,
+#kiosk-welcome-start-btn.kiosk-welcome-choice:focus,
+#kiosk-welcome-start-btn.kiosk-welcome-choice:focus-visible,
+#kiosk-welcome-start-btn.kiosk-welcome-choice:active,
+#kiosk-welcome-start-btn.kiosk-welcome-choice.active:hover,
+#kiosk-welcome-start-btn.kiosk-welcome-choice.active:focus,
+#kiosk-welcome-start-btn.kiosk-welcome-choice.active:focus-visible,
+#kiosk-welcome-start-btn.kiosk-welcome-choice.active:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  transform: none !important;
+  -webkit-tap-highlight-color: transparent !important;
 }
 
 .kiosk-welcome-overlay[hidden],

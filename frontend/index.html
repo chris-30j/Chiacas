@@ -59,31 +59,57 @@
     window.startKioskOrder = startKioskOrder;
 
     document.addEventListener('DOMContentLoaded', function() {
-      var btn = document.querySelector('.kiosk-welcome-choice');
-      if (btn) {
-        btn.onclick = function() { startKioskOrder('Dine-In'); };
-        btn.addEventListener('click', function() { startKioskOrder('Dine-In'); });
-        btn.addEventListener('pointerup', function() { startKioskOrder('Dine-In'); });
-        btn.addEventListener('touchend', function(e) {
-          e.preventDefault();
-          startKioskOrder('Dine-In');
+      var video = document.getElementById('kiosk-welcome-video');
+      var btn = document.getElementById('kiosk-welcome-start-btn');
+
+      if (video && btn) {
+        // Synchronize button activation with the in-video animation
+        video.addEventListener('timeupdate', function() {
+          if (video.currentTime >= 9.5) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+          // Hold on the complete call-to-action screen when animation completes
+          if (video.currentTime >= 12.0) {
+            video.pause();
+          }
         });
       }
+
+      if (btn) {
+        btn.onclick = function(e) {
+          if (e && e.stopPropagation) e.stopPropagation();
+          startKioskOrder('Dine-In');
+        };
+      }
     });
+
+    // Touching the card during intro animation fast-forwards directly to Order Now
+    function handleWelcomeCardClick(e) {
+      var video = document.getElementById('kiosk-welcome-video');
+      var btn = document.getElementById('kiosk-welcome-start-btn');
+      if (video && video.currentTime < 9.5) {
+        video.currentTime = 9.6;
+        if (btn) btn.classList.add('active');
+      }
+    }
   </script>
 </head>
 <body class="theme-orange-white kiosk-welcome-open">
-  <!-- ADDITIVE CUSTOMER WELCOME SCREEN: Home Page Video Clip with Interactive Touch-to-Order -->
-  <section class="kiosk-welcome-overlay" id="kiosk-welcome-overlay" aria-label="Welcome to ChiaCas Express self-order kiosk" onclick="startKioskOrder('Dine-In')">
-    <div class="kiosk-welcome-panel kiosk-welcome-video-card" id="kiosk-welcome-panel" title="Touch screen to start ordering">
-      <video id="kiosk-welcome-video" class="kiosk-welcome-video" autoplay loop muted playsinline poster="assets/big_mac.jpg">
-        <source src="assets/home page video.mp4" type="video/mp4">
-        <source src="assets/home%20page%20video.mp4" type="video/mp4">
-        <!-- Image Fallback if browser doesn't play video -->
-        <img src="assets/big_mac.jpg" alt="Freshly prepared burger with fries" style="width:100%; border-radius:36px;">
-      </video>
-      <!-- Interactive Order Now Button Hotspot (matches animated button in video) -->
-      <button class="kiosk-welcome-choice kiosk-welcome-btn-hotspot" id="kiosk-welcome-start-btn" type="button" aria-label="Order Now" onclick="event.stopPropagation(); startKioskOrder('Dine-In')"></button>
+  <!-- ADDITIVE CUSTOMER WELCOME SCREEN: Home Page Video Clip with Single Synchronized Order Now Button -->
+  <section class="kiosk-welcome-overlay" id="kiosk-welcome-overlay" aria-label="Welcome to ChiaCas Express self-order kiosk">
+    <div class="kiosk-welcome-panel kiosk-welcome-card" id="kiosk-welcome-panel" onclick="handleWelcomeCardClick(event)">
+      <div class="kiosk-welcome-video-wrap">
+        <video id="kiosk-welcome-video" class="kiosk-welcome-video" autoplay muted playsinline poster="assets/big_mac.jpg">
+          <source src="assets/home page video.mp4" type="video/mp4">
+          <source src="assets/home%20page%20video.mp4" type="video/mp4">
+          <!-- Image Fallback if browser doesn't play video -->
+          <img src="assets/big_mac.jpg" alt="ChiaCas Welcome" style="width:100%; border-radius:36px;">
+        </video>
+        <!-- Single interactive Order Now button perfectly synchronized with video animation -->
+        <button class="kiosk-welcome-choice" id="kiosk-welcome-start-btn" type="button" aria-label="Order Now" onclick="event.stopPropagation(); startKioskOrder('Dine-In')"></button>
+      </div>
     </div>
   </section>
   <!-- Top Navigation App Bar -->
