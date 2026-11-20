@@ -60,23 +60,17 @@
 
     document.addEventListener('DOMContentLoaded', function() {
       var video = document.getElementById('kiosk-welcome-video');
-      var btn = document.getElementById('kiosk-welcome-start-btn');
-
-      if (video && btn) {
-        // Synchronize button activation with the in-video animation
-        video.addEventListener('timeupdate', function() {
-          if (video.currentTime >= 9.5) {
-            btn.classList.add('active');
-          } else {
-            btn.classList.remove('active');
+      if (video) {
+        video.muted = true;
+        try {
+          var p = video.play();
+          if (p && typeof p.catch === 'function') {
+            p.catch(function() {});
           }
-          // Hold on the complete call-to-action screen when animation completes
-          if (video.currentTime >= 12.0) {
-            video.pause();
-          }
-        });
+        } catch (e) {}
       }
 
+      var btn = document.getElementById('kiosk-welcome-start-btn');
       if (btn) {
         btn.onclick = function(e) {
           if (e && e.stopPropagation) e.stopPropagation();
@@ -84,32 +78,59 @@
         };
       }
     });
-
-    // Touching the card during intro animation fast-forwards directly to Order Now
-    function handleWelcomeCardClick(e) {
-      var video = document.getElementById('kiosk-welcome-video');
-      var btn = document.getElementById('kiosk-welcome-start-btn');
-      if (video && video.currentTime < 9.5) {
-        video.currentTime = 9.6;
-        if (btn) btn.classList.add('active');
-      }
-    }
   </script>
 </head>
 <body class="theme-orange-white kiosk-welcome-open">
-  <!-- ADDITIVE CUSTOMER WELCOME SCREEN: Home Page Video Clip with Single Synchronized Order Now Button -->
+  <!-- ADDITIVE CUSTOMER WELCOME SCREEN: Kiosk Card with Burger Animation Loop & Staggered Text -->
   <section class="kiosk-welcome-overlay" id="kiosk-welcome-overlay" aria-label="Welcome to ChiaCas Express self-order kiosk">
-    <div class="kiosk-welcome-panel kiosk-welcome-card" id="kiosk-welcome-panel" onclick="handleWelcomeCardClick(event)">
-      <div class="kiosk-welcome-video-wrap">
-        <video id="kiosk-welcome-video" class="kiosk-welcome-video" autoplay muted playsinline poster="assets/big_mac.jpg">
-          <source src="assets/home page video.mp4" type="video/mp4">
-          <source src="assets/home%20page%20video.mp4" type="video/mp4">
-          <!-- Image Fallback if browser doesn't play video -->
-          <img src="assets/big_mac.jpg" alt="ChiaCas Welcome" style="width:100%; border-radius:36px;">
-        </video>
-        <!-- Single interactive Order Now button perfectly synchronized with video animation -->
-        <button class="kiosk-welcome-choice" id="kiosk-welcome-start-btn" type="button" aria-label="Order Now" onclick="event.stopPropagation(); startKioskOrder('Dine-In')"></button>
+    <div class="kiosk-welcome-panel kiosk-welcome-card" id="kiosk-welcome-panel">
+      
+      <!-- 1. Brand Logo Header -->
+      <div class="kiosk-welcome-brand">
+        <img src="assets/chiacas_brand_logo.png" alt="ChiaCas Express Self-Order Kiosk" class="kiosk-welcome-brand-img">
       </div>
+
+      <!-- 2. Eyebrow -->
+      <div class="kiosk-welcome-eyebrow">
+        WELCOME - SELF-SERVICE ORDERING
+      </div>
+
+      <!-- 3. Title -->
+      <h1 class="kiosk-welcome-title">
+        Hungry?
+        <span>Order here.</span>
+      </h1>
+
+      <!-- 4. Description -->
+      <p class="kiosk-welcome-description">
+        Your favourites are just a few taps away. Choose how you would like to enjoy your meal and start building your order.
+      </p>
+
+      <!-- 5. Burger Animation Video Clip (Looping) -->
+      <div class="kiosk-welcome-food-art">
+        <video id="kiosk-welcome-video" class="kiosk-welcome-food-video" autoplay loop muted playsinline poster="assets/big_mac.jpg">
+          <source src="assets/burger animation.mp4" type="video/mp4">
+          <source src="assets/burger%20animation.mp4" type="video/mp4">
+          <img src="assets/big_mac.jpg" alt="ChiaCas Burger" style="width:100%; height:100%; object-fit:cover;">
+        </video>
+        <div class="kiosk-welcome-food-shade"></div>
+        <div class="kiosk-welcome-food-label">
+          Made for your cravings
+          <small>Good Food. Easy Ordering.</small>
+        </div>
+      </div>
+
+      <!-- 6. Order Now Button (Below Burger Animation) -->
+      <div class="kiosk-welcome-actions">
+        <button class="kiosk-welcome-choice" id="kiosk-welcome-start-btn" type="button" onclick="startKioskOrder('Dine-In')">
+          <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+          <span>Order Now</span>
+        </button>
+        <p class="kiosk-welcome-hint">
+          <i class="fa-solid fa-hand-pointer" aria-hidden="true"></i> Touch a button to get started
+        </p>
+      </div>
+
     </div>
   </section>
   <!-- Top Navigation App Bar -->
