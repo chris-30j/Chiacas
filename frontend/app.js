@@ -3073,4 +3073,8 @@ document.addEventListener('DOMContentLoaded', () => {
     welcomeOverlay.hidden = false;
     document.body.classList.add('kiosk-welcome-open');
   }
+<<<<<<< HEAD:app.js
 });
+=======
+});
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/app.js

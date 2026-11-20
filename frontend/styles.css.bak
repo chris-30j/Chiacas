@@ -3209,6 +3209,7 @@ body {
 
 
 
+<<<<<<< HEAD:styles.css
 /* =====================================================================
    ADDITIVE SELF-SERVICE WELCOME KIOSK (1ST PAGE)
    UP TO BURGER PHOTO ONLY VISIBLE — PRODUCTS REVEALED ON "ORDER NOW"
@@ -3477,17 +3478,243 @@ body.kiosk-welcome-open .app-header,
 body.kiosk-welcome-open .main-content,
 body.kiosk-welcome-open .kiosk-cart-bar {
   display: none !important;
+=======
+/* ==================== ADDITIVE SELF-SERVICE WELCOME KIOSK ==================== */
+/* This section is intentionally appended so existing styles remain available. */
+.kiosk-welcome-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  padding: clamp(16px, 3vw, 44px);
+  background: radial-gradient(circle at 50% 20%, rgba(255, 188, 13, .16), transparent 42%), #101114;
+  color: #fff;
+}
+.kiosk-welcome-overlay[hidden] { display: none !important; }
+.kiosk-welcome-panel {
+  width: min(100%, 1180px);
+  margin: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+  gap: clamp(24px, 4vw, 60px);
+  align-items: center;
+}
+.kiosk-welcome-copy { padding: clamp(8px, 2vw, 28px); }
+.kiosk-welcome-brand { display: flex; align-items: center; gap: 14px; margin-bottom: clamp(28px, 5vh, 54px); }
+.kiosk-welcome-mark {
+  width: 58px; height: 58px; flex: 0 0 58px; display: grid; place-items: center;
+  border-radius: 18px; color: #111; background: #ffbc0d; font-size: 1.65rem;
+  box-shadow: 0 8px 28px rgba(255,188,13,.2);
+}
+.kiosk-welcome-brand-name { font: 900 clamp(1.35rem, 2.3vw, 2rem)/1 Outfit, Inter, sans-serif; letter-spacing: -.04em; }
+.kiosk-welcome-brand-tag { color: #ffbc0d; text-transform: uppercase; letter-spacing: .13em; font-size: .76rem; font-weight: 800; margin-top: 5px; }
+.kiosk-welcome-eyebrow { color: #ffbc0d; font-size: clamp(.8rem, 1.1vw, 1rem); font-weight: 900; letter-spacing: .17em; text-transform: uppercase; }
+.kiosk-welcome-title { margin: 14px 0 16px; font: 900 clamp(2.5rem, 6vw, 5.6rem)/.98 Outfit, Inter, sans-serif; letter-spacing: -.055em; }
+.kiosk-welcome-title span { color: #ffbc0d; }
+.kiosk-welcome-description { max-width: 540px; color: #b8bdc8; font-size: clamp(1rem, 1.45vw, 1.25rem); line-height: 1.6; }
+.kiosk-welcome-food-art { position: relative; min-height: 340px; height: min(50vh, 560px); border-radius: 32px; overflow: hidden; background: linear-gradient(145deg, #303139, #18191e 70%); border: 1px solid rgba(255,255,255,.1); }
+.kiosk-welcome-food-art img { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; opacity: .9; }
+.kiosk-welcome-food-shade { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(10,10,12,.82), transparent 65%); }
+.kiosk-welcome-food-label { position: absolute; left: 24px; right: 24px; bottom: 24px; font: 800 clamp(1.2rem, 2vw, 1.8rem)/1.2 Outfit, sans-serif; }
+.kiosk-welcome-food-label small { display: block; margin-top: 7px; color: #ffbc0d; font: 700 .78rem/1.4 Inter, sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+.kiosk-welcome-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 30px; }
+.kiosk-welcome-choice { min-height: 94px; display: flex; align-items: center; justify-content: center; gap: 14px; padding: 18px; border: 2px solid #ffbc0d; border-radius: 18px; background: #ffbc0d; color: #121212; font: 900 clamp(1.05rem, 1.7vw, 1.45rem)/1 Outfit, sans-serif; cursor: pointer; transition: transform .16s ease, background .16s ease, box-shadow .16s ease; }
+.kiosk-welcome-choice.secondary { background: rgba(255,255,255,.04); color: #fff; border-color: rgba(255,255,255,.22); }
+.kiosk-welcome-choice:hover, .kiosk-welcome-choice:focus-visible { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,188,13,.18); outline: 3px solid rgba(255,188,13,.25); outline-offset: 3px; }
+.kiosk-welcome-choice i { font-size: 1.45em; }
+.kiosk-welcome-hint { margin-top: 18px; color: #828895; text-align: center; font-size: .86rem; }
+body.kiosk-welcome-open { overflow: hidden; }
+@media (max-width: 760px) {
+  .kiosk-welcome-panel { grid-template-columns: 1fr; gap: 20px; max-width: 560px; }
+  .kiosk-welcome-copy { padding: 4px; }
+  .kiosk-welcome-brand { margin-bottom: 24px; }
+  .kiosk-welcome-title { font-size: clamp(2.5rem, 12vw, 4rem); }
+  .kiosk-welcome-food-art { min-height: 190px; height: 24vh; }
+  .kiosk-welcome-actions { margin-top: 20px; }
+  .kiosk-welcome-choice { min-height: 78px; flex-direction: column; gap: 8px; padding: 12px 8px; }
+}
+@media (min-width: 1400px) {
+  .kiosk-welcome-choice { min-height: 116px; }
+}
+@media (min-width: 1400px) {
+  .kiosk-welcome-choice { min-height: 116px; }
+}
+
+/* ===== PORTRAIT SELF-ORDERING KIOSK LAYOUT ===== */
+/* Additive layout override: preserves existing styling and functionality */
+
+@media (orientation: portrait) {
+  .kiosk-welcome-overlay {
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: clamp(16px, 3vh, 36px);
+    overflow-y: auto;
+  }
+
+  .kiosk-welcome-panel {
+    width: 100%;
+    max-width: 760px;
+    min-height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: clamp(18px, 3vh, 32px);
+  }
+
+  .kiosk-welcome-copy {
+    width: 100%;
+    padding: 0;
+  }
+
+  .kiosk-welcome-brand {
+    margin-bottom: clamp(20px, 3vh, 36px);
+  }
+
+  .kiosk-welcome-mark {
+    width: 64px;
+    height: 64px;
+    flex-basis: 64px;
+  }
+
+  .kiosk-welcome-title {
+    font-size: clamp(3rem, 7vh, 6rem);
+    line-height: 1;
+    margin: 18px 0;
+  }
+
+  .kiosk-welcome-description {
+    max-width: 100%;
+    font-size: clamp(1.1rem, 2.2vh, 1.5rem);
+    line-height: 1.5;
+  }
+
+  .kiosk-welcome-food-art {
+    width: 100%;
+    min-height: 260px;
+    height: 30vh;
+    max-height: 520px;
+    border-radius: 24px;
+  }
+
+  .kiosk-welcome-food-label {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .kiosk-welcome-actions {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .kiosk-welcome-choice {
+    width: 100%;
+    min-height: 88px;
+    flex-direction: row;
+    font-size: clamp(1.3rem, 2.5vh, 1.8rem);
+  }
+
+  .kiosk-welcome-hint {
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+}
+
+
+/* =====================================================================
+   PORTRAIT KIOSK LAYOUT OVERRIDE — appended, existing CSS preserved
+   This intentionally applies to the welcome overlay regardless of the
+   orientation media query, so it can be tested in desktop browser tools.
+   ===================================================================== */
+.kiosk-welcome-overlay {
+  box-sizing: border-box !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  min-height: 100dvh !important;
+  padding: clamp(16px, 3vh, 40px) !important;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+.kiosk-welcome-panel {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 760px !important;
+  min-height: 100% !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  justify-content: center !important;
+  gap: clamp(18px, 2.5vh, 30px) !important;
+}
+.kiosk-welcome-copy {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+.kiosk-welcome-brand { margin-bottom: clamp(16px, 2.5vh, 28px) !important; }
+.kiosk-welcome-mark { width: 58px !important; height: 58px !important; flex-basis: 58px !important; }
+.kiosk-welcome-title {
+  font-size: clamp(2.7rem, 6.5vh, 5.2rem) !important;
+  line-height: .98 !important;
+  margin: 12px 0 16px !important;
+}
+.kiosk-welcome-description { max-width: 100% !important; font-size: clamp(1rem, 2vh, 1.3rem) !important; }
+.kiosk-welcome-food-art {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 220px !important;
+  height: clamp(220px, 27vh, 440px) !important;
+  max-height: 440px !important;
+  flex: 0 0 auto !important;
+  border-radius: 24px !important;
+}
+.kiosk-welcome-actions {
+  width: 100% !important;
+  grid-template-columns: 1fr !important;
+  gap: 12px !important;
+  margin-top: 0 !important;
+}
+.kiosk-welcome-choice {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  min-height: 76px !important;
+  flex-direction: row !important;
+  padding: 16px 20px !important;
+  font-size: clamp(1.15rem, 2.2vh, 1.55rem) !important;
+}
+.kiosk-welcome-hint { margin-top: 8px !important; padding-bottom: 8px !important; }
+@media (min-width: 761px) and (orientation: landscape) {
+  /* Keep the kiosk welcome composition portrait-shaped during browser testing. */
+  .kiosk-welcome-panel { max-width: 760px !important; }
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 }
 
 /* =====================================================================
    PORTRAIT TOUCHSCREEN KIOSK LAYOUT (APPLIED TO CUSTOMER KIOSK VIEW)
+<<<<<<< HEAD:styles.css
    STRICT DIMENSIONS PRESERVED — ORANGE + WHITE THEME & FULL PAGE SCROLLING
+=======
+   Layout-only overrides: existing menu, cart, search and payment handlers
+   remain unchanged. Applied consistently across orientations so the main
+   ordering page shares the exact same portrait kiosk layout as the 1st
+   page (welcome screen).
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
    ===================================================================== */
 :root {
   --header-height: 82px;
   --kiosk-cart-height: 142px;
 }
 
+<<<<<<< HEAD:styles.css
 /* Outer backdrop for customer kiosk mode: soft warm cream - Self-contained fixed kiosk view (NO outer window scrollbar) */
 body:not(.counter-mode-active) {
   height: 100vh !important;
@@ -3504,11 +3731,20 @@ body:not(.counter-mode-active) {
   overscroll-behavior: none !important;
   overscroll-behavior-y: none !important;
   background: #FDF7F0 radial-gradient(circle at 50% 20%, rgba(255, 121, 0, .14), transparent 45%) !important;
+=======
+/* Outer backdrop for customer kiosk mode matches the 1st page */
+body:not(.counter-mode-active) {
+  min-height: 100dvh;
+  height: auto !important;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 20%, rgba(255, 188, 13, .16), transparent 42%), #101114 !important;
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
   display: flex;
   flex-direction: column;
   align-items: stretch;
 }
 
+<<<<<<< HEAD:styles.css
 body:not(.counter-mode-active)::-webkit-scrollbar {
   display: none !important;
   width: 0 !important;
@@ -3516,19 +3752,26 @@ body:not(.counter-mode-active)::-webkit-scrollbar {
 }
 
 /* Centered Kiosk Frame for both Header and Main Content (matches .kiosk-welcome-panel, max-width: 760px) */
+=======
+/* Centered Kiosk Frame for both Header and Main Content (matches .kiosk-welcome-panel) */
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 body:not(.counter-mode-active) .app-header {
   box-sizing: border-box !important;
   width: 100% !important;
   max-width: 760px !important;
   margin: 0 auto !important;
+<<<<<<< HEAD:styles.css
   margin-top: 0 !important;
   position: sticky !important;
   top: 0 !important;
   z-index: 100 !important;
+=======
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
   flex: 0 0 var(--header-height) !important;
   min-height: var(--header-height) !important;
   padding: 0 20px !important;
   gap: 12px !important;
+<<<<<<< HEAD:styles.css
   background: #FFFFFF !important;
   border-top: none !important;
   border-left: 1px solid #F0D8C2 !important;
@@ -3536,10 +3779,16 @@ body:not(.counter-mode-active) .app-header {
   border-bottom: 1.5px solid #F0D8C2 !important;
   border-radius: 0 !important;
   box-shadow: 0 2px 12px rgba(232, 93, 4, 0.05) !important;
+=======
+  background: #18191e !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 }
 
 body:not(.counter-mode-active) .brand-logo { gap: 10px; min-width: 0; }
 body:not(.counter-mode-active) .mcd-arches { width: 46px; height: 46px; flex: 0 0 46px; }
+<<<<<<< HEAD:styles.css
 body:not(.counter-mode-active) .mcd-arches svg path { stroke: #FF7900 !important; }
 body:not(.counter-mode-active) .brand-name { font-size: 1.45rem; color: #292929 !important; }
 body:not(.counter-mode-active) .brand-tag { font-size: .65rem; letter-spacing: .08em; color: #FF7900 !important; }
@@ -3561,6 +3810,12 @@ body:not(.counter-mode-active) .badge-count {
   background: #E85D04 !important;
   color: #FFFFFF !important;
 }
+=======
+body:not(.counter-mode-active) .brand-name { font-size: 1.45rem; }
+body:not(.counter-mode-active) .brand-tag { font-size: .65rem; letter-spacing: .08em; }
+body:not(.counter-mode-active) .header-right-actions { gap: 8px; }
+body:not(.counter-mode-active) .staff-mode-btn { padding: 10px 12px; font-size: .8rem; }
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 body:not(.counter-mode-active) .owner-profile-container { display: none !important; }
 
 body:not(.counter-mode-active) .main-content {
@@ -3570,6 +3825,7 @@ body:not(.counter-mode-active) .main-content {
   margin: 0 auto !important;
   flex: 1 1 auto !important;
   min-height: 0 !important;
+<<<<<<< HEAD:styles.css
   height: calc(100vh - var(--header-height)) !important;
   height: calc(100dvh - var(--header-height)) !important;
   max-height: calc(100vh - var(--header-height)) !important;
@@ -3602,6 +3858,28 @@ body:not(.counter-mode-active) #kiosk-view {
 
 body:not(.counter-mode-active) .kiosk-banner { display: none !important;
 
+=======
+  height: auto !important;
+  overflow: visible !important;
+  position: relative !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.85);
+  background: #121316 !important;
+}
+
+body:not(.counter-mode-active) #kiosk-view {
+  height: auto !important;
+  min-height: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: visible !important;
+  position: relative !important;
+  background: transparent !important;
+}
+
+body:not(.counter-mode-active) .kiosk-banner {
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
   flex: 0 0 auto !important;
   margin: 14px 16px 0 !important;
   padding: 16px 20px !important;
@@ -3609,6 +3887,7 @@ body:not(.counter-mode-active) .kiosk-banner { display: none !important;
   gap: 12px !important;
   align-items: stretch !important;
   flex-direction: column !important;
+<<<<<<< HEAD:styles.css
   background: linear-gradient(135deg, #E85D04 0%, #FF7900 55%, #FFA043 100%) !important;
   border: 1px solid rgba(255, 255, 255, 0.25) !important;
   box-shadow: 0 6px 18px rgba(232, 93, 4, 0.18) !important;
@@ -3647,10 +3926,19 @@ body:not(.counter-mode-active) .banner-cta:hover {
   background: #FFF0DF !important;
   transform: translateY(-2px);
 }
+=======
+}
+
+body:not(.counter-mode-active) .banner-content h1 { font-size: clamp(1.25rem, 3.5vw, 1.8rem); line-height: 1.15; }
+body:not(.counter-mode-active) .banner-content p { font-size: .9rem; line-height: 1.45; }
+body:not(.counter-mode-active) .banner-badge { display: inline-flex; width: fit-content; font-size: .7rem; }
+body:not(.counter-mode-active) .banner-cta { width: 100% !important; min-height: 52px !important; padding: 12px 16px !important; font-size: 1rem !important; }
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 
 body:not(.counter-mode-active) .kiosk-layout {
   flex: 1 1 auto !important;
   min-height: 0 !important;
+<<<<<<< HEAD:styles.css
   height: 100% !important;
   display: flex !important;
   flex-direction: column !important;
@@ -3659,6 +3947,14 @@ body:not(.counter-mode-active) .kiosk-layout {
   margin-bottom: 0 !important;
   overflow: hidden !important;
   box-sizing: border-box !important;
+=======
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  padding: 12px 16px calc(var(--kiosk-cart-height) + 14px) !important;
+  margin-bottom: 0 !important;
+  overflow: hidden !important;
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 }
 
 body:not(.counter-mode-active) .category-sidebar {
@@ -3683,6 +3979,7 @@ body:not(.counter-mode-active) .cat-btn {
   padding: 10px 16px !important;
   gap: 9px !important;
   font-size: .9rem !important;
+<<<<<<< HEAD:styles.css
   background: #FFFFFF !important;
   border: 1.5px solid #F0D8C2 !important;
   border-radius: 24px;
@@ -3706,13 +4003,32 @@ body:not(.counter-mode-active) .cat-btn.active {
 }
 body:not(.counter-mode-active) .cat-btn.active i {
   color: #FFFFFF !important;
+=======
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+}
+
+body:not(.counter-mode-active) .cat-btn.active {
+  background: #ffbc0d !important;
+  color: #121212 !important;
+  border-color: #ffbc0d !important;
+}
+
+body:not(.counter-mode-active) .cat-btn.active i {
+  color: #121212 !important;
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 }
 
 body:not(.counter-mode-active) .menu-container {
   flex: 1 1 auto !important;
   min-height: 0 !important;
+<<<<<<< HEAD:styles.css
   height: 100% !important;
   gap: 10px !important;
+=======
+  gap: 12px !important;
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
@@ -3724,6 +4040,7 @@ body:not(.counter-mode-active) .menu-header-bar {
   flex-direction: column !important;
   gap: 10px !important;
 }
+<<<<<<< HEAD:styles.css
 body:not(.counter-mode-active) .menu-header-bar h2 {
   font-size: 1.35rem;
   color: #292929 !important;
@@ -3748,15 +4065,25 @@ body:not(.counter-mode-active) .search-box input {
 body:not(.counter-mode-active) .search-box input::placeholder {
   color: #777777 !important;
 }
+=======
+
+body:not(.counter-mode-active) .menu-header-bar h2 { font-size: 1.35rem; }
+body:not(.counter-mode-active) .search-box { width: 100% !important; min-height: 46px !important; padding: 10px 14px !important; box-sizing: border-box !important; }
+body:not(.counter-mode-active) .search-box input { font-size: 1rem; }
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 
 body:not(.counter-mode-active) .menu-grid {
   flex: 1 1 auto !important;
   min-height: 0 !important;
+<<<<<<< HEAD:styles.css
   height: 100% !important;
+=======
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
   display: grid !important;
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   align-content: start !important;
   gap: 12px !important;
+<<<<<<< HEAD:styles.css
   padding: 0 8px 16px 0 !important;
   overflow-y: auto !important;
   overflow-x: hidden !important;
@@ -3891,6 +4218,24 @@ body:not(.counter-mode-active) .kiosk-cart-bar {
   transform: translateX(-50%) !important;
   width: 100% !important;
   max-width: 760px !important;
+=======
+  padding: 0 3px 10px 0 !important;
+  overflow-y: visible !important;
+  overscroll-behavior: contain !important;
+  max-height: none
+}
+
+body:not(.counter-mode-active) .food-card { min-width: 0 !important; padding: 10px !important; border-radius: 16px !important; }
+body:not(.counter-mode-active) .food-img-wrapper { height: clamp(112px, 17vh, 220px) !important; margin-bottom: 9px !important; border-radius: 12px !important; }
+body:not(.counter-mode-active) .food-info h3 { font-size: clamp(.9rem, 2vw, 1.15rem) !important; line-height: 1.2 !important; }
+body:not(.counter-mode-active) .food-meta { font-size: .75rem !important; margin-bottom: 8px !important; }
+body:not(.counter-mode-active) .food-price { font-size: 1.12rem !important; }
+body:not(.counter-mode-active) .food-footer { gap: 8px !important; padding-top: 8px !important; }
+body:not(.counter-mode-active) .add-food-btn { width: 46px !important; height: 46px !important; flex: 0 0 46px !important; font-size: 1.1rem !important; }
+
+body:not(.counter-mode-active) .kiosk-cart-bar {
+  position: absolute !important;
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
   height: var(--kiosk-cart-height) !important;
   min-height: var(--kiosk-cart-height) !important;
   padding: 12px 16px max(12px, env(safe-area-inset-bottom)) !important;
@@ -3898,6 +4243,7 @@ body:not(.counter-mode-active) .kiosk-cart-bar {
   align-items: stretch !important;
   flex-direction: column !important;
   box-sizing: border-box !important;
+<<<<<<< HEAD:styles.css
   background: #FFFFFF !important;
   border-top: 1.5px solid #F0D8C2 !important;
   border-left: 1px solid #F0D8C2 !important;
@@ -3969,6 +4315,20 @@ body:not(.counter-mode-active) .checkout-btn:disabled {
   opacity: 0.6 !important;
   box-shadow: none !important;
 }
+=======
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+body:not(.counter-mode-active) .cart-summary-info { gap: 12px !important; min-height: 44px !important; }
+body:not(.counter-mode-active) .cart-icon-wrapper { width: 42px !important; height: 42px !important; border-radius: 12px !important; font-size: 1.1rem !important; }
+body:not(.counter-mode-active) .cart-label { font-size: .8rem !important; }
+body:not(.counter-mode-active) .cart-total-val { font-size: 1.2rem !important; }
+body:not(.counter-mode-active) .cart-actions-group { display: grid !important; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr) !important; gap: 10px !important; }
+body:not(.counter-mode-active) .view-order-btn,
+body:not(.counter-mode-active) .checkout-btn { justify-content: center !important; min-height: 48px !important; padding: 12px 10px !important; font-size: .9rem !important; white-space: nowrap !important; }
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 
 /* Constrain Cart Drawer in kiosk mode */
 body:not(.counter-mode-active) #cart-modal .cart-drawer {
@@ -3977,23 +4337,37 @@ body:not(.counter-mode-active) #cart-modal .cart-drawer {
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%) !important;
+<<<<<<< HEAD:styles.css
   background: #FFFFFF !important;
   border-left: 1.5px solid #F0D8C2 !important;
   border-right: 1.5px solid #F0D8C2 !important;
 }
 
 /* Small screen adjustments - exact original dimensions preserved */
+=======
+}
+
+/* Small screen adjustments */
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 @media (max-width: 480px) {
   body:not(.counter-mode-active) .app-header { padding: 0 12px !important; }
   body:not(.counter-mode-active) .brand-tag { font-size: .56rem !important; }
   body:not(.counter-mode-active) .mcd-arches { width: 38px !important; height: 38px !important; flex-basis: 38px !important; }
   body:not(.counter-mode-active) .staff-mode-btn span:not(.badge-count) { display: none !important; }
+<<<<<<< HEAD:styles.css
   body:not(.counter-mode-active) .kiosk-banner { display: none !important;
  margin-left: 10px !important; margin-right: 10px !important; padding: 14px !important; }
   body:not(.counter-mode-active) .kiosk-layout { padding-left: 10px !important; padding-right: 10px !important; }
   body:not(.counter-mode-active) .menu-grid { gap: 9px !important; }
   body:not(.counter-mode-active) .food-card { padding: 8px !important; }
   body:not(.counter-mode-active) .food-img-wrapper { height: clamp(140px, 20vh, 195px) !important; }
+=======
+  body:not(.counter-mode-active) .kiosk-banner { margin-left: 10px !important; margin-right: 10px !important; padding: 14px !important; }
+  body:not(.counter-mode-active) .kiosk-layout { padding-left: 10px !important; padding-right: 10px !important; }
+  body:not(.counter-mode-active) .menu-grid { gap: 9px !important; }
+  body:not(.counter-mode-active) .food-card { padding: 8px !important; }
+  body:not(.counter-mode-active) .food-img-wrapper { height: clamp(95px, 14vh, 150px) !important; }
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
   body:not(.counter-mode-active) .food-info h3 { font-size: .88rem !important; }
   body:not(.counter-mode-active) .food-price { font-size: 1rem !important; }
   body:not(.counter-mode-active) .add-food-btn { width: 40px !important; height: 40px !important; flex-basis: 40px !important; }
@@ -4005,10 +4379,13 @@ body:not(.counter-mode-active) #cart-modal .cart-drawer {
 /* Private Owner Counter POS Mode overrides (retains full-width desktop layout) */
 body.counter-mode-active {
   background: var(--bg-dark) !important;
+<<<<<<< HEAD:styles.css
   background-color: #0f0f11 !important;
   color: #f8fafc !important;
   height: 100vh !important;
   overflow: hidden !important;
+=======
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 }
 body.counter-mode-active .app-header {
   max-width: none !important;
@@ -4016,8 +4393,11 @@ body.counter-mode-active .app-header {
   border-left: none !important;
   border-right: none !important;
   background: #18191e !important;
+<<<<<<< HEAD:styles.css
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: none !important;
+=======
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 }
 body.counter-mode-active .main-content {
   max-width: none !important;
@@ -4025,6 +4405,7 @@ body.counter-mode-active .main-content {
   border-left: none !important;
   border-right: none !important;
   box-shadow: none !important;
+<<<<<<< HEAD:styles.css
   background: #0f0f11 !important;
   overflow: hidden !important;
   height: calc(100vh - var(--header-height)) !important;
@@ -4035,10 +4416,14 @@ body.counter-mode-active #counter-view {
   height: 100% !important;
   overflow: hidden !important;
   background: #0f0f11 !important;
+=======
+  background: var(--bg-dark) !important;
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
 }
 body.counter-mode-active .owner-profile-container {
   display: flex !important;
 }
+<<<<<<< HEAD:styles.css
 body.counter-mode-active .owner-profile-widget {
   display: flex !important;
   background: rgba(255, 121, 0, 0.15) !important;
@@ -4143,3 +4528,5 @@ body.counter-mode-active .summary-line.grand-total strong {
 body.counter-mode-active .qr-info h4 {
   color: #ffffff !important;
 }
+=======
+>>>>>>> f29a5ed204a7ba1bddc6b0b4d3066b32c35f1348:frontend/styles.css.bak
